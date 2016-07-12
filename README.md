@@ -1,4 +1,4 @@
 # csam-web
 Cybersecurity Awareness Module Website
 
-Website layout for CSAM.
+CSAM consists of 6 modules to raise awareness of cybersecurity, targeting primarily a college audience.
