@@ -14,4 +14,8 @@ $(document).ready(function () {
     $(".email-hover").click(function () {
         $(this).toggleClass('email-selected');
     });
+    
+    $('#clickClick').click(function () {
+        $('[data-toggle="popover"]').popover('show').toggleClass('email-selected');
+    });
 });
