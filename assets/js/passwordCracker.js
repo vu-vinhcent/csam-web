@@ -41,13 +41,9 @@ function guessPassword() {
         , hasLower = false
         , character = ''
         , allCombinations = 0
-        , timeToCrackOnline = 0
         , timeToCrackOffline = 0
-        , timeToCrackCloud = 0
         , units = 'second(s)'
-        , rateOnline = 1000
-        , rateOffline = 100000000000
-        , rateCloud = 100000000000000;
+        , rateOffline = 1000000;
 
     allCombinations = 0;
 
@@ -58,18 +54,17 @@ function guessPassword() {
         // Really need to just make a list for this...
         // Or maybe add a class to all of these?
 
-        document.getElementById('possibleCharacters').innerHTML = '';
+        document.getElementById('possibleCharacters').innerHTML = '&nbsp;';
         document.getElementById('searchSpace').innerHTML = '';
 
         document.getElementById('has-symbol').innerHTML = '';
         document.getElementById('has-digit').innerHTML = '';
         document.getElementById('has-lower').innerHTML = '';
         document.getElementById('has-upper').innerHTML = '';
-        document.getElementById('has-upper').innerHTML = '';
+        document.getElementById('has-eight').innerHTML = '';
 
-        document.getElementsByClassName('online').innerHTML = '';
-        document.getElementsByClassName('offline').innerHTML = '';
-        document.getElementsByClassName('cloud').innerHTML = '';
+        document.getElementById('offline').innerHTML = '';
+        document.getElementById('rate').innerHTML = '';
 
         document.getElementById('printDictSize').innerHTML = '';
         document.getElementById('result').innerHTML = '';
@@ -151,15 +146,13 @@ function guessPassword() {
 
         // This is in seconds already.
         // Also assumes worst case.
-        timeToCrackOnline = Math.pow(searchSpace, password.length) / rateOnline;
         timeToCrackOffline = Math.pow(searchSpace, password.length) / rateOffline;
-        timeToCrackCloud = Math.pow(searchSpace, password.length) / rateCloud;
 
         document.getElementById('possibleCharacters').innerHTML = searchSpace;
         document.getElementById('searchSpace').innerHTML = numberWithCommas(allCombinations);
+        
+        document.getElementById('rate').innerHTML = numberWithCommas(rateOffline);
 
-        document.getElementById('online').innerHTML = convert(timeToCrackOnline, units);
         document.getElementById('offline').innerHTML = convert(timeToCrackOffline, units);
-        document.getElementById('cloud').innerHTML = convert(timeToCrackCloud, units);
     }
 }
