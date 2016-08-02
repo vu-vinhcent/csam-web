@@ -29,21 +29,33 @@
         </div>
         <div class="collapse navbar-toggleable-xs" id="bd-main-nav">
             <nav class="nav navbar-nav">
-                <div class="pull-xs-left"> <a class="nav-item nav-link active" href="index.html"> Home </a> </div>
-                <div class="pull-xs-right"> <a class="nav-item nav-link" href="passwords.html"> Passwords </a> <a class="nav-item nav-link" href="socialeng.html"> Social Engineering </a> <a class="nav-item nav-link" href="index.html"> Browser Security </a> <a class="nav-item nav-link" href="index.html"> Online Shopping </a> <a class="nav-item nav-link" href="index.html"> Mobile Security </a> <a class="nav-item nav-link" href="index.html"> Last Module </a> </div>
+                
+                <div class="pull-xs-left">
+                    <a class="nav-item nav-link" href="index.html"> Home </a>
+                </div>
+                
+                <div class="pull-xs-right">
+                    <a class="nav-item nav-link" href="passwords.html"> Passwords </a> 
+                    <a class="nav-item nav-link active" href="socialeng.html"> Social Engineering </a> 
+                    <a class="nav-item nav-link" href="index.html"> Browser Security </a> 
+                    <a class="nav-item nav-link" href="index.html"> Mobile Security </a> 
+                </div>
+                
             </nav>
         </div>
     </header>
+    
     <div class="container-fluid hidden-md-up p-x-0">
         <div class="row m-t-2">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="card">
                     <div class="card-block text-xs-center">
-                        <h3> Unfortunately, this  content is unable to be viewed on mobile.</h3> </div>
+                        <h3> Unfortunately, this content is unable to be viewed on this resolution. Please view it on a computer or change the orientation of your tablet. </h3> </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <div id="main" class="container-fluid hidden-sm-down">
         <div class="row">
             <div class="jumbotron jumbotron-fluid col-md-12">
@@ -53,25 +65,6 @@
             </div>
         </div>
         <div class="row">
-            <!--            <div class="col-md-2 col-lg-1" style="z-index: 100">
-                <nav class="sidebar container fixme">
-                    <ul class="nav sidebar-list" style="color: white;">
-                        <li>
-                            <a class="sidebar-link"> Introduction </a>
-                            <ul class="sidebar-list">
-                                <li>
-                                    <a data-scroll href="#passwords" class="sidebar-link"> Passwords </a>
-                                    <ul class="sidebar-list">
-                                        <li> <a class="sidebar-link"> Complexity </a> </li>
-                                        <li> <a class="sidebar-link"> Exercise </a> </li>
-                                        <li> <a class="sidebar-link"> Cracking </a> </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>-->
             <div class="col-md-10 col-md-offset-1 container-fluid">
                 <div class="card card-block">
                     <h3 id="complexity" class="card-title"> Phishing and You </h3>
@@ -113,9 +106,10 @@
                     
                     <button id="clickClick"> Click to do something. </button>
                 </div>
+                
                 <div class="card card-block">
                     <h5> What is phishing? </h5>
-                    <p> A malicious entity contacts you, masquerading as a legitimate business and asks for information, directs you to a false website that tries to obtain your information, or otherwise tries to rip you off and exploit you. </p>
+                    <p> A malicious entity contacts you, masquerading as a legitimate business and asks for information, directs you to a false website that tries to obtain your information, or otherwise tries to exploit you. </p>
                     <h5> Phishing Warning Signs </h5>
                     <ul>
                         <li> Requests for personal information </li>
@@ -124,9 +118,41 @@
                         <li> False links </li>
                     </ul>
                 </div>
+                
                 <div class="card card-block">
                     <h5> Fake Websites </h5>
                     <p> Phishing emails can take you to fake websites that are designed to look like legitimate websites. </p>
+                    
+                    <br>
+                    
+                    <p> Click on the image below to switch between two websites. Which one is real? </p>
+                    <p>
+                        <div class="form-check">
+                            <label class="form-check-lavel">
+                                <input class="form-check-input" type="radio" name="pickImages" id="image1-option" value="option1">
+                                Image1 is real.
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-lavel">
+                                <input class="form-check-input" type="radio" name="pickImages" id="image2-option" value="option2">
+                                Image2 is real.
+                            </label>
+                        </div>
+                    </p>
+
+                    <p>
+                        <div class="img-container">
+                            <img id="image1" class="top" src="assets/images/image1.jpg" width=100%></img>
+                            <img id="image2" class="bottom" src="assets/images/image2.jpg" width=100%></img>
+                        </div>
+                    </p>
+
+            
+                </div>
+                
+                <div class="card card-block no-border">
+                    <a id="se-button" class="btn btn-primary btn-lg btn-block" href="index.html" role="button"> Start a new module! </a>
                 </div>
             </div>
         </div>

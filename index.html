@@ -22,18 +22,29 @@
         <![endif]-->
 </head>
 
-<body>
+<body onload="checkProgress()">
     <header class="navbar navbar-right navbar-full navbar-light" role="banner">
         <div class="clearfix">
             <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2"> &#9776; </button>
         </div>
         <div class="collapse navbar-toggleable-xs" id="bd-main-nav">
             <nav class="nav navbar-nav">
-                <div class="pull-xs-left"> <a class="nav-item nav-link active" href="index.html"> Home </a> </div>
-                <div class="pull-xs-right"> <a class="nav-item nav-link" href="passwords.html"> Passwords </a> <a class="nav-item nav-link" href="socialeng.html"> Social Engineering </a> <a class="nav-item nav-link" href="index.html"> Browser Security </a> <a class="nav-item nav-link" href="index.html"> Online Shopping </a> <a class="nav-item nav-link" href="index.html"> Mobile Security </a> <a class="nav-item nav-link" href="index.html"> Last Module </a> </div>
+                
+                <div class="pull-xs-left">
+                    <a class="nav-item nav-link active" href="index.html"> Home </a>
+                </div>
+                
+                <div class="pull-xs-right">
+                    <a class="nav-item nav-link" href="passwords.html"> Passwords </a> 
+                    <a class="nav-item nav-link" href="socialeng.html"> Social Engineering </a> 
+                    <a class="nav-item nav-link" href="index.html"> Browser Security </a> 
+                    <a class="nav-item nav-link" href="index.html"> Mobile Security </a> 
+                </div>
+                
             </nav>
         </div>
     </header>
+    
     <div class="container-fluid hidden-md-up p-x-0">
         <div class="row m-t-2">
             <div class="container-fluid">
@@ -44,6 +55,7 @@
             </div>
         </div>
     </div>
+    
     <div class="container-fluid hidden-sm-down">
         <div class="row">
             <div class="jumbotron jumbotron-fluid col-md-12 m-b-1">
@@ -54,76 +66,72 @@
         </div>
         <div class="row" style="position: relative;">
             <div class="container-fluid col-md-offset-1 col-md-10">
-                <div class="row card-deck m-y-1" style="height: 15em;">
-                    <div class="card card-link transition">
+                <div class="row card-deck m-y-1">
+                    
+                    <div id="p-card" class="card card-link transition">
                         <a href="passwords.html">
-                            <div class="card-block height-full transition">
-                                <h4 class="card-title">  Passwords </h4>
-                                <hr>
+                            <div class="card-block">
+                                <h4 id="p-title" class="card-title transition"> Passwords </h4>
+                            </div>
+                            
+                            <img src="assets/images/image.svg" width="100%"></img>
+ 
+                            <div class="card-block">
                                 <p> Think of how many passwords you use on a daily basis. Now think about what could happen if someone else had them. </p>
                             </div>
                         </a>
                     </div>
-                    <div class="card card-link transition">
+                
+                    <div id="se-card" class="card card-link transition">
                         <a href="socialeng.html">
-                            <div class="card-block height-fulltransition">
-                                <h4> Social Engineering </h4>
-                                <hr>
+                            <div class="card-block transition">
+                                <h4 id="se-title" class="card-title"> Social Engineering </h4> 
+                            </div>
+                            
+                                <img src="assets/images/image.svg" width="100%"></img>
+                
+                            <div class="card-block">
                                 <p> Computers are only as secure as their users are. You are the biggest vulnerability. </p>
                             </div>
                         </a>
                     </div>
-                    <div class="card card-link transition">
+            
+                    <div id="bs-card" class="card card-link transition">
                         <a href="index.html">
-                            <div class="card-block height-full transition">
-                                <h4> Browser Security </h4>
-                                <hr>
+                            <img class="card-img-top" src="assets/images/image.svg" width="100%"></img>
+                        
+                            <div class="card-block transition">
+                                <h4 id="bs-title" class="card-title"> Browser Security </h4>
                                 <p> A securely configured browser is the first line of defence. </p>
                             </div>
+                    
+                            
                         </a>
                     </div>
-                </div>
-                <div class="row card-deck m-y-1" style="height: 15em;">
-                    <div class="card card-link transition">
+            
+                    <div id="ms-card" class="card card-link transition">
                         <a href="index.html">
-                            <div class="card-block height-full transition">
-                                <h4> Online Shopping </h4>
-                                <hr>
-                                <p> Some description of the module. </p>
+                            <img class="card-img-top" src="assets/images/image.svg" width="100%"></img>
+                        
+                            <div class="card-block transition">
+                                <h4 id="ms-title" class="card-title"> Mobile Security </h4> 
+                            </div> 
+                            
+                            
+                        
+                            <div class="card-block transition">
+                                <p> Description for module. </p>
                             </div>
                         </a>
                     </div>
-                    <div class="card card-link transition">
-                        <a href="index.html">
-                            <div class="card-block height-full transition">
-                                <h4> Mobile Security </h4>
-                                <hr>
-                                <p> Some description of the module. </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card card-link transition">
-                        <a href="index.html">
-                            <div class="card-block height-full transition">
-                                <h4> Last Module </h4>
-                                <hr>
-                                <p> Some description of the module. </p>
-                            </div>
-                        </a>
-                    </div>
+
                 </div>
             </div>
         </div>
     </div>
-    <!-- JavaScript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- <script src="assets/js/zenscroll-min.js"></script> -->
-    <!-- <script src="assets/bootstrap/dist/js/bootstrap.min.js"></script> 
-    <script>
-        var x = screen.availHeight;
 
-        zenscroll.setup(null, x * .1)
-    </script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="assets/js/csam.js"></script>
 </body>
 
 </html>
