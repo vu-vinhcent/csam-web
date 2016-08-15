@@ -1,3 +1,7 @@
+function delete_cookie(name) {
+  document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+
 function checkProgress() {
     var pDone = document.cookie.replace(/(?:(?:^|.*;\s*)p\s*\=\s*([^;]*).*$)|^.*$/, "$1");
     var seDone = document.cookie.replace(/(?:(?:^|.*;\s*)se\s*\=\s*([^;]*).*$)|^.*$/, "$1");
@@ -25,6 +29,20 @@ function checkProgress() {
     }
 }
 
+function checkPW() {
+    if ($('input[name=question1]:checked').val() == 'true') {
+        $("#q1-check").replaceWith('<span id="q1-check" class="question-space green"> &#10004; </span>');
+    } else {
+        $("#q1-check").replaceWith('<span id="q1-check" class="question-space red"> &#10008; </span>');
+    }
+    
+    if ($('input[name=question2]:checked').val() == 'true') {
+        $("#q2-check").replaceWith('<span id="q2-check" class="question-space green"> &#10004; </span>');
+    } else {
+        $("#q2-check").replaceWith('<span id="q2-check" class="question-space red"> &#10008; </span>');
+    }
+}
+
 $(document).ready(function () {
     $.ajax({
         url: 'http://d2hqmzmqawf6yu.cloudfront.net/' + 'basicDictionary.txt'
@@ -34,8 +52,28 @@ $(document).ready(function () {
         , success: function (data) {
             dict = data;
 
-            dictionary = dict.split('\n');
+            dictionaryAttack = dict.split('\n');
         }
+    });
+    
+    $('#sidebar').css('width', $("#content-container").width() * .15);
+    
+    $(window).scroll(function () {
+        var $fixedElement = $('#sidebar');
+        var $contentContainer = $("#content-container");
+        var vTop = $fixedElement.offset().top - parseFloat($fixedElement.css('margin-top').replace(/auto/, 0));
+        var y = $(this).scrollTop() * 2;
+        
+        if (y >= vTop) {
+            $fixedElement.addClass("fixed");
+            $fixedElement.css('width', $contentContainer.width() * .15);
+        } else {
+            $fixedElement.removeClass("fixed");
+        }
+    });
+    
+    $(window).resize(function () {
+        $('#sidebar').css('width', $("#content-container").width() * .15);
     });
 
     $(".email-hover").click(function () {
@@ -67,6 +105,6 @@ $(document).ready(function () {
     });
     
     $('#ms-button').click(function () {
-        document.cookie = "ms=true"; expires=31536e3;
+        document.cookie = "ms=true";
     });
 });
