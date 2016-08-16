@@ -43,6 +43,20 @@ function checkPW() {
     }
 }
 
+function moveSideNav() {
+    var $fixedElement = $('#sidebar');
+    var $contentContainer = $("#content-container");
+    var vTop = $fixedElement.offset().top - parseFloat($fixedElement.css('margin-top').replace(/auto/, 0));
+    var y = $(this).scrollTop() * 2;
+
+    if (y >= vTop) {
+        $fixedElement.addClass("fixed");
+        $fixedElement.css('width', $contentContainer.width() * .15);
+    } else {
+        $fixedElement.removeClass("fixed");
+    }
+}
+
 $(document).ready(function () {
     $.ajax({
         url: 'http://d2hqmzmqawf6yu.cloudfront.net/' + 'basicDictionary.txt'
@@ -58,18 +72,10 @@ $(document).ready(function () {
     
     $('#sidebar').css('width', $("#content-container").width() * .15);
     
+    moveSideNav();
+    
     $(window).scroll(function () {
-        var $fixedElement = $('#sidebar');
-        var $contentContainer = $("#content-container");
-        var vTop = $fixedElement.offset().top - parseFloat($fixedElement.css('margin-top').replace(/auto/, 0));
-        var y = $(this).scrollTop() * 2;
-        
-        if (y >= vTop) {
-            $fixedElement.addClass("fixed");
-            $fixedElement.css('width', $contentContainer.width() * .15);
-        } else {
-            $fixedElement.removeClass("fixed");
-        }
+        moveSideNav();
     });
     
     $(window).resize(function () {
